@@ -5,7 +5,7 @@ owner = "root"
 group = "root"
 mode  = "0644"
 keys = [
-  "/glusterfs/volumes/data/hosts",
+  "/glusterfs/hosts",
 ]
 
 check_cmd = "/glusterfs/check {{ .src }}"
