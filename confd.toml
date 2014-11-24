@@ -1,0 +1,4 @@
+confdir  = "/glusterfs"
+interval = 5
+prefix   = "/"
+quiet = true
