@@ -1,0 +1,12 @@
+[template]
+src   = "hosts"
+dest  = "/tmp/hosts"
+owner = "root"
+group = "root"
+mode  = "0644"
+keys = [
+  "/glusterfs/volumes/data/hosts",
+]
+
+check_cmd = "/glusterfs/check {{ .src }}"
+reload_cmd = "/glusterfs/fix_hosts"
