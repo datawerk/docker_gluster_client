@@ -9,4 +9,4 @@ ADD templates /glusterfs/
 ADD glusterfs_client_confd.conf /etc/supervisor/conf.d/
 
 # default command
-CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]
+CMD ["supervisord", "-c", "/etc/supervisord.conf"]
