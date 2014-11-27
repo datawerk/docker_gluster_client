@@ -5,5 +5,8 @@ MY_IP=$(ip addr show dev eth0 | grep inet | grep eth0 | awk '{print $2}' | awk -
 
 echo "$MY_IP $MY_NAME" >> /tmp/hosts
 
-cat /tmp/hosts | sed "s/^.*${HOST}$/${MY_IP}\t${HOST}/" > /tmp/hosts.fix
+LOCAL_GLUSTER_HOST_IP=$(etcdctl -C ${COREOS_PRIVATE_IPV4}:4001 get /glusterfs/volumes/data/hosts/${HOST})                         
+cat /tmp/hosts | sed "s/^.*${HOST}$/${LOCAL_GLUSTER_HOST_IP}\t${HOST}/" > /tmp/hosts.fix
 cp /tmp/hosts.fix /etc/hosts
+
+
